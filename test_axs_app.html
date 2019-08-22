@@ -13,15 +13,32 @@
     <button id="axs_action_btn" >Click to pay with AXS</button>
 
     <p id="debug"></p>
+
+    <p id="window_debug"></p>
     <script>
+
     var axs_ios_store_url = "https://itunes.apple.com/sg/app/axs-payment/id666250798?mt=8";
     var axs_android_store_url = "https://play.google.com/store/apps/details?id=com.axs&hl=en";
-    var device_detected = "ios"
 
     $(document).ready(function(){
       $('#axs_action_btn').click(onAXSButtonClicked);
-      $('#debug').html("User Agent: " + navigator.userAgent + "<br/>" + "Is Mobile Device: " + isMobileDevice());
+      $('#debug').html("User Agent: " + navigator.userAgent + "<br/>" + "Is Mobile Device: " + isMobileDevice() + "<br/>" + "Is iPhone: " + isiPhone());
+      $('window_debug').html("Window is freshly loaded");
     });
+
+    window.blur = function(){
+      $('window_debug').html("Browser have been possibly switched to another app @ " + GetDateTimeNow());
+    };
+
+    window.focus = function(){
+      $('window_debug').append("</br></br>Browser have returned from another app @ " + GetDateTimeNow());
+    }
+
+    function GetDateTimeNow()
+    {
+      var d = new Date();
+      return d.getMonth() + 1 + "/" + d.getDate() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes();
+    }
 
     function onAXSButtonClicked()
     {
@@ -30,12 +47,19 @@
     }
 
     function VisitAXSStoreURI() {
-      if(device_detected == "ios"){
+      if(isiPhone()){
         window.location = axs_ios_store_url;
       }
       else{
         window.location = axs_android_store_url;
       }
+    }
+
+    function isiPhone(){
+        return (
+            (navigator.platform.indexOf("iPhone") != -1) ||
+            (navigator.platform.indexOf("iPod") != -1)
+        );
     }
 
     function isMobileDevice() {
