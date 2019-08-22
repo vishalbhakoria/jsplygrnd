@@ -10,7 +10,8 @@
   <body>
     <h1>AXS App Test</h1>
     <h2>Assumption is made that app dosent exist</h2>
-    <button id="axs_action_btn" >Click to pay with AXS</button>
+    <button id="axs_action_btn" >Click to pay with AXS</button> ------
+    <button id="banks_action_btn" >Click to pay with iBanking</button>
 
     <p id="debug"></p>
 
@@ -19,6 +20,10 @@
 
     var axs_ios_store_url = "https://itunes.apple.com/sg/app/axs-payment/id666250798?mt=8";
     var axs_android_store_url = "https://play.google.com/store/apps/details?id=com.axs&hl=en";
+    var ts_leavebrowser;
+    var ts_enteredbrowser;
+    var assume_is_axs_threshold = 5 * 1000;
+    var isAxsButtonClicked = false;
 
     // Pre-requisites setup
     var hidden, state, visibilityChange; 
@@ -43,6 +48,7 @@
 
     $(document).ready(function(){
       $('#axs_action_btn').click(onAXSButtonClicked);
+      $('#banks_action_btn').click(onBanksButtonClicked);
       $('#debug').html("User Agent: " + navigator.userAgent + "<br/><br/>" + "Is Mobile Device: " + isMobileDevice() + "<br/><br/>" + "Is iPhone: " + isiPhone());
       $('#window_debug').html("Window is freshly loaded @ " + GetDateTimeNow());
       document.addEventListener(visibilityChange, onVisibilityChange);
@@ -52,10 +58,17 @@
      if(document[state] == 'hidden')
      {
       $('#window_debug').append("</br></br>Browser have been possibly switched to another app @ " + GetDateTimeNow());
+      ts_leavebrowser = new Date();
+      ts_enteredbrowser = undefined;
      }
      else
      {
-      $('#window_debug').append("</br></br>Browser have returned from another app @ " + GetDateTimeNow());
+      ts_enteredbrowser = new Date();
+      var elapsedSeconds = (ts_enteredbrowser - ts_leavebrowser).getSeconds();
+      $('#window_debug').append("</br></br>Time elapsed since browser was left hidden : " + elapsedSeconds);
+      if(elapsedSeconds > assume_is_axs_threshold && isAxsButtonClicked){
+        $('#window_debug').append("</br></br>Time elapsed since browser is more than 5 seonds since AXS button clicked: Check for any AXS transaction");
+      }
      }
     };
 
@@ -69,6 +82,12 @@
     {
       setTimeout(VisitAXSStoreURI, 500);
       window.location = 'abc://invalidlor.com/plsfail-app.cfm';
+      isAxsButtonClicked = true;
+    }
+
+    function onBanksButtonClicked()
+    {
+      isAxsButtonClicked = false;
     }
 
     function VisitAXSStoreURI() {
