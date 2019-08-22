@@ -49,7 +49,7 @@
     });
 
    function onVisibilityChange(){
-     if(window.hidden)
+     if(document[state] == 'hidden')
      {
       $('#window_debug').append("</br></br>Browser have been possibly switched to another app @ " + GetDateTimeNow());
      }
