@@ -22,7 +22,7 @@
 
     $(document).ready(function(){
       $('#axs_action_btn').click(onAXSButtonClicked);
-      $('#debug').html("User Agent: " + navigator.userAgent + "<br/>" + "Is Mobile Device: " + isMobileDevice() + "<br/>" + "Is iPhone: " + isiPhone());
+      $('#debug').html("User Agent: " + navigator.userAgent + "<br/><br/>" + "Is Mobile Device: " + isMobileDevice() + "<br/><br/>" + "Is iPhone: " + isiPhone());
       $('#window_debug').html("Window is freshly loaded");
       $(window).blur(onWindowBlur);
       $(window).focus(onWindowFocus);
