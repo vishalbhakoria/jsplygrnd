@@ -22,7 +22,7 @@
     var axs_android_store_url = "https://play.google.com/store/apps/details?id=com.axs&hl=en";
     var ts_leavebrowser;
     var ts_enteredbrowser;
-    var assume_is_axs_threshold = 5 * 1000;
+    var assume_is_axs_threshold_seconds = 5;
     var isAxsButtonClicked = false;
 
     // Pre-requisites setup
@@ -64,9 +64,9 @@
      else
      {
       ts_enteredbrowser = new Date();
-      var elapsedSeconds = (ts_enteredbrowser - ts_leavebrowser).getSeconds();
+      var elapsedSeconds = (ts_enteredbrowser - ts_leavebrowser)/1000;
       $('#window_debug').append("</br></br>Time elapsed since browser was left hidden : " + elapsedSeconds);
-      if(elapsedSeconds > assume_is_axs_threshold && isAxsButtonClicked){
+      if(elapsedSeconds > assume_is_axs_threshold_seconds && isAxsButtonClicked){
         $('#window_debug').append("</br></br>Time elapsed since browser is more than 5 seonds since AXS button clicked: Check for any AXS transaction");
       }
      }
