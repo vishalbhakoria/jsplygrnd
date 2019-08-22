@@ -24,13 +24,15 @@
       $('#axs_action_btn').click(onAXSButtonClicked);
       $('#debug').html("User Agent: " + navigator.userAgent + "<br/>" + "Is Mobile Device: " + isMobileDevice() + "<br/>" + "Is iPhone: " + isiPhone());
       $('#window_debug').html("Window is freshly loaded");
+      $(window).blur(onWindowBlur);
+      $(window).focus(onWindowFocus);
     });
 
-    window.blur = function(){
+   function onWindowBlur(){
       $('#window_debug').html("Browser have been possibly switched to another app @ " + GetDateTimeNow());
     };
 
-    window.focus = function(){
+    function onWindowFocus(){
       $('#window_debug').append("</br></br>Browser have returned from another app @ " + GetDateTimeNow());
     }
 
