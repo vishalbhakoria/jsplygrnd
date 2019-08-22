@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Static Template</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  </head>
+  <body>
+    <h1>AXS App Test</h1>
+    <h2>Assumption is made that app dosent exist</h2>
+    <button id="axs_action_btn" >Click to pay with AXS</button>
+    <script>
+    var axs_ios_store_url = "https://itunes.apple.com/sg/app/axs-payment/id666250798?mt=8";
+    var axs_android_store_url = "https://play.google.com/store/apps/details?id=com.axs&hl=en";
+    var device_detected = "ios"
+
+    $(document).ready(function(){
+      $('#axs_action_btn').click(onAXSButtonClicked);
+    });
+    function onAXSButtonClicked()
+    {
+      setTimeout(VisitAXSStoreURI, 500);
+      window.location = 'abc://invalidlor.com/plsfail-app.cfm';
+    }
+    function VisitAXSStoreURI() {
+      if(device_detected == "ios"){
+        window.location = axs_ios_store_url;
+      }
+      else{
+        window.location = axs_android_store_url;
+      }
+    }
+    </script>
+  </body>
+</html>
