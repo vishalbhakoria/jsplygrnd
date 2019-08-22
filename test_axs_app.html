@@ -11,7 +11,7 @@
     <h1>AXS App Test</h1>
     <h2>Assumption is made that app dosent exist</h2>
     <button id="axs_action_btn" >Click to pay with AXS</button> ------
-    <button id="banks_action_btn" >Click to pay with iBanking</button>
+    <button id="banks_action_btn" >Click to pay with OCBC iBanking</button>
 
     <p id="debug"></p>
 
@@ -87,6 +87,7 @@
 
     function onBanksButtonClicked()
     {
+      window.open("https://internet.ocbc.com/internet-banking/");
       isAxsButtonClicked = false;
     }
 
