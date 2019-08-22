@@ -20,26 +20,49 @@
     var axs_ios_store_url = "https://itunes.apple.com/sg/app/axs-payment/id666250798?mt=8";
     var axs_android_store_url = "https://play.google.com/store/apps/details?id=com.axs&hl=en";
 
+    // Pre-requisites setup
+    var hidden, state, visibilityChange; 
+    if (typeof document.hidden !== "undefined") {
+      hidden = "hidden";
+      visibilityChange = "visibilitychange";
+      state = "visibilityState";
+    } else if (typeof document.mozHidden !== "undefined") {
+      hidden = "mozHidden";
+      visibilityChange = "mozvisibilitychange";
+      state = "mozVisibilityState";
+    } else if (typeof document.msHidden !== "undefined") {
+      hidden = "msHidden";
+      visibilityChange = "msvisibilitychange";
+      state = "msVisibilityState";
+    } else if (typeof document.webkitHidden !== "undefined") {
+      hidden = "webkitHidden";
+      visibilityChange = "webkitvisibilitychange";
+      state = "webkitVisibilityState";
+    }
+    // End Pre-requisites setup
+
     $(document).ready(function(){
       $('#axs_action_btn').click(onAXSButtonClicked);
       $('#debug').html("User Agent: " + navigator.userAgent + "<br/><br/>" + "Is Mobile Device: " + isMobileDevice() + "<br/><br/>" + "Is iPhone: " + isiPhone());
-      $('#window_debug').html("Window is freshly loaded");
-      $(window).blur(onWindowBlur);
-      $(window).focus(onWindowFocus);
+      $('#window_debug').html("Window is freshly loaded @ " + GetDateTimeNow());
+      document.addEventListener(visibilityChange, onVisibilityChange);
     });
 
-   function onWindowBlur(){
-      $('#window_debug').html("Browser have been possibly switched to another app @ " + GetDateTimeNow());
-    };
-
-    function onWindowFocus(){
+   function onVisibilityChange(){
+     if(window.hidden)
+     {
+      $('#window_debug').append("</br></br>Browser have been possibly switched to another app @ " + GetDateTimeNow());
+     }
+     else
+     {
       $('#window_debug').append("</br></br>Browser have returned from another app @ " + GetDateTimeNow());
-    }
+     }
+    };
 
     function GetDateTimeNow()
     {
       var d = new Date();
-      return d.getMonth() + 1 + "/" + d.getDate() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes();
+      return d.getMonth() + 1 + "/" + d.getDate() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
     }
 
     function onAXSButtonClicked()
