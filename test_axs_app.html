@@ -11,6 +11,8 @@
     <h1>AXS App Test</h1>
     <h2>Assumption is made that app dosent exist</h2>
     <button id="axs_action_btn" >Click to pay with AXS</button>
+
+    <p id="debug"></p>
     <script>
     var axs_ios_store_url = "https://itunes.apple.com/sg/app/axs-payment/id666250798?mt=8";
     var axs_android_store_url = "https://play.google.com/store/apps/details?id=com.axs&hl=en";
@@ -18,12 +20,15 @@
 
     $(document).ready(function(){
       $('#axs_action_btn').click(onAXSButtonClicked);
+      $('#debug').html("User Agent: " + navigator.userAgent + "<br/>" + "Is Mobile Device: " + isMobileDevice());
     });
+
     function onAXSButtonClicked()
     {
       setTimeout(VisitAXSStoreURI, 500);
       window.location = 'abc://invalidlor.com/plsfail-app.cfm';
     }
+
     function VisitAXSStoreURI() {
       if(device_detected == "ios"){
         window.location = axs_ios_store_url;
@@ -32,6 +37,10 @@
         window.location = axs_android_store_url;
       }
     }
+
+    function isMobileDevice() {
+      return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+    };
     </script>
   </body>
 </html>
