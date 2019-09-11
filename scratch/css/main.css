@@ -21,6 +21,7 @@
 .container {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    z-index:0;
 }
 
 hr {
