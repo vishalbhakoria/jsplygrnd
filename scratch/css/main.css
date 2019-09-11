@@ -21,7 +21,13 @@
 .container {
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    z-index:0;
+    -webkit-transform: translateZ(0px);
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-perspective: 1000;
+    transform: translateZ(0px);
+    transform: translate3d(0,0,0);
+    perspective: 1000;
+    z-index:0!important;
 }
 
 hr {
