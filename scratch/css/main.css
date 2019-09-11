@@ -27,6 +27,12 @@ hr {
     border-top: 1px solid #33333360;
 }
 
+body {
+    color: #000!important;
+    font-family:'SourceSansPro-Bold', 'Source Sans Pro Bold', 'Source Sans Pro';
+    font-size: 16px!important;
+}
+
 p {
     font-family:'SourceSansPro-Bold', 'Source Sans Pro Bold', 'Source Sans Pro';
     font-size:16px;
@@ -320,6 +326,14 @@ h2 {
 
 #av_find_out_more_text p{
     color:#FF6600;
+}
+
+#pt-calc-img-container {
+    padding: 0;
+}
+
+#pt-calc-details-container {
+    padding-left: 0;
 }
 
 .pt-calc-total-table {
