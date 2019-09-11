@@ -18,6 +18,12 @@
     padding: 0;
 }
 
+.contianer {
+    overflow-x: hidden;
+    position: absolute;
+    -webkit-overflow-scrolling: touch;
+}
+
 hr {
     border-top: 1px solid #33333360;
 }
@@ -26,6 +32,10 @@ p {
     font-family:'SourceSansPro-Bold', 'Source Sans Pro Bold', 'Source Sans Pro';
     font-size:16px;
     text-rendering: optimizeLegibility;
+}
+
+.blue-text {
+    color:#3084C6;
 }
 
 .white-bg {
@@ -316,6 +326,39 @@ h2 {
     width: 100%;
 }
 
+.ibill-cloud {
+    width: 120px;
+    position: relative;
+    right: 39px;
+    top: -34px;
+    z-index: 1;
+}
+
+.padding-section {
+    padding-top: 25px;
+}
+
+.key-image {
+    top: -18px;
+    position: relative;
+    float: right;
+    left: -57px;
+    right: 0;
+}
+
+.cloud-image {
+    top: -20px;
+    position: relative;
+    float: right;
+    left: -50px;
+}
+
+.cloud-strips-image {
+    position: relative;
+    left: -71px;
+    top: 44px;
+}
+
 /* Animation */
 .fade-in {
     opacity: 0;
@@ -371,6 +414,28 @@ h2 {
     transition: all 1s ease-out;
 }
 .fade-up.visible {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+.fade-left {
+    opacity: 0;
+    -webkit-transform: translateX(80px);
+    -moz-transform: translateX(80px);
+    -ms-transform: translateX(80px);
+    -o-transform: translateX(80px);
+    transform: translateX(80px);
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+.fade-left.visible {
     opacity: 1;
     -webkit-transform: none;
     -moz-transform: none;
