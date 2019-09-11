@@ -18,9 +18,8 @@
     padding: 0;
 }
 
-.contianer {
+.container {
     overflow-x: hidden;
-    position: absolute;
     -webkit-overflow-scrolling: touch;
 }
 
@@ -298,6 +297,13 @@ h2 {
     position: relative;
     top: -275px;
     left: 220px;
+}
+
+.callout:nth-of-type(5)
+{
+    position: relative;
+    top: -335px;
+    left: 119px;
 }
 
 #comparable-intro-img {
