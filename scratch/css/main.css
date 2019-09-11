@@ -275,6 +275,10 @@ h2 {
     height: 44px;
 }
 
+#callouts {
+    position: absolute;
+}
+
 .callout p {
     position:relative;
     top: -40px;
@@ -286,14 +290,14 @@ h2 {
 .callout:nth-of-type(1)
 {
     position: relative;
-    top: -210px;
+    top:  20px;
     left: 95px;
 }
 
 .callout:nth-of-type(2)
 {
     position: relative;
-    top: -270px;
+    top: -40px;
     left: 180px;
 
 }
@@ -301,21 +305,21 @@ h2 {
 .callout:nth-of-type(3)
 {
     position: relative;
-    top: -275px;
+    top: -40px;
     left: 220px;
 }
 
 .callout:nth-of-type(4)
 {
     position: relative;
-    top: -275px;
+    top: -45px;
     left: 220px;
 }
 
 .callout:nth-of-type(5)
 {
     position: relative;
-    top: -335px;
+    top: -105px;
     left: 119px;
 }
 
@@ -359,6 +363,42 @@ h2 {
     right: 39px;
     top: -34px;
     z-index: 1;
+}
+
+.popover-title {
+    background-color: #005aad;
+    border-bottom: #005aad;
+}
+
+.close {
+    color: white;
+    opacity: 1;
+}
+
+.popover {
+    background-color: #005aad;
+    border: #005aad;
+    max-width: 400px !important;
+    color: white;
+}
+
+.popover.top .arrow:after {
+    border-top-color: #005aad;
+}
+
+.popover ul {
+    padding-left: 20px;
+}
+
+.popover .text-hyperlink {
+    font-family: 'Source Sans Pro Semibold';
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.popover .text-hyperlink:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .padding-section {
@@ -531,6 +571,29 @@ h2 {
 }
 
 .annual-value-left.visible {
+    opacity: 1;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+.fade-right {
+    opacity: 0;
+    -webkit-transform: translateX(-80px);
+    -moz-transform: translateX(-80px);
+    -ms-transform: translateX(-80px);
+    -o-transform: translateX(-80px);
+    transform: translateX(-80px);
+    -webkit-transition: all 1s ease-out;
+    -moz-transition: all 1s ease-out;
+    -ms-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+
+.fade-right.visible {
     opacity: 1;
     -webkit-transform: none;
     -moz-transform: none;
