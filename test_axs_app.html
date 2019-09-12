@@ -85,7 +85,7 @@
         function onAXSButtonClicked() {
             ts_axs_btn_clicked = new Date();
             setTimeout(VisitAXSStoreURI, 1000);
-            redirectVar = window.open('axsredirection://invalidlor.com/plsfail-app.cfm');
+            redirectVar = window.location.replace('axsredirection://invalidlor.com/plsfail-app.cfm');
             isAxsButtonClicked = true;
         }
 
@@ -107,7 +107,7 @@
                     );
                 if(confirmToViewAXSInstructions){
                     if (isiPhone()) {
-                        window.open("axs_ios_store_url");
+                        window.open(axs_ios_store_url);
                     } else {
                         window.open(axs_android_store_url);
                     }
