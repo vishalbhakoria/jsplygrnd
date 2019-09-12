@@ -1,131 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Static Template</title>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <h1>AXS App Test</h1>
     <h2>Assumption is made that app dosent exist</h2>
-    <button id="axs_action_btn" >Click to pay with AXS</button> ------
-    <button id="banks_action_btn" >Click to pay with OCBC iBanking</button>
+    <button id="axs_action_btn">Click to pay with AXS</button> ------
+    <button id="banks_action_btn">Click to pay with OCBC iBanking</button>
 
     <p id="debug"></p>
 
     <p id="window_debug"></p>
     <script>
+        var axs_ios_store_url = "https://itunes.apple.com/sg/app/axs-payment/id666250798?mt=8";
+        var axs_android_store_url = "https://play.google.com/store/apps/details?id=com.axs&hl=en";
+        var ts_leavebrowser;
+        var ts_enteredbrowser;
+        var assume_is_axs_threshold_seconds = 5;
+        var isAxsButtonClicked = false;
+        var ts_axs_btn_clicked = 0;
+        var redirectVar = undefined;
 
-    var axs_ios_store_url = "https://itunes.apple.com/sg/app/axs-payment/id666250798?mt=8";
-    var axs_android_store_url = "https://play.google.com/store/apps/details?id=com.axs&hl=en";
-    var ts_leavebrowser;
-    var ts_enteredbrowser;
-    var assume_is_axs_threshold_seconds = 5;
-    var isAxsButtonClicked = false;
-    var ts_axs_btn_clicked = 0;
-    var redirectVar = undefined;  
-      
-    // Pre-requisites setup
-    var hidden, state, visibilityChange; 
-    if (typeof document.hidden !== "undefined") {
-      hidden = "hidden";
-      visibilityChange = "visibilitychange";
-      state = "visibilityState";
-    } else if (typeof document.mozHidden !== "undefined") {
-      hidden = "mozHidden";
-      visibilityChange = "mozvisibilitychange";
-      state = "mozVisibilityState";
-    } else if (typeof document.msHidden !== "undefined") {
-      hidden = "msHidden";
-      visibilityChange = "msvisibilitychange";
-      state = "msVisibilityState";
-    } else if (typeof document.webkitHidden !== "undefined") {
-      hidden = "webkitHidden";
-      visibilityChange = "webkitvisibilitychange";
-      state = "webkitVisibilityState";
-    }
-    // End Pre-requisites setup
+        // Pre-requisites setup
+        var hidden, state, visibilityChange;
+        if (typeof document.hidden !== "undefined") {
+            hidden = "hidden";
+            visibilityChange = "visibilitychange";
+            state = "visibilityState";
+        } else if (typeof document.mozHidden !== "undefined") {
+            hidden = "mozHidden";
+            visibilityChange = "mozvisibilitychange";
+            state = "mozVisibilityState";
+        } else if (typeof document.msHidden !== "undefined") {
+            hidden = "msHidden";
+            visibilityChange = "msvisibilitychange";
+            state = "msVisibilityState";
+        } else if (typeof document.webkitHidden !== "undefined") {
+            hidden = "webkitHidden";
+            visibilityChange = "webkitvisibilitychange";
+            state = "webkitVisibilityState";
+        }
+        // End Pre-requisites setup
 
-    $(document).ready(function(){
-      $('#axs_action_btn').click(onAXSButtonClicked);
-      $('#banks_action_btn').click(onBanksButtonClicked);
-      $('#debug').html("User Agent: " + navigator.userAgent + "<br/><br/>" + "Is Mobile Device: " + isMobileDevice() + "<br/><br/>" + "Is iPhone: " + isiPhone());
-      $('#window_debug').html("Window is freshly loaded @ " + GetDateTimeNow());
-      document.addEventListener(visibilityChange, onVisibilityChange);
-    });
+        $(document).ready(function () {
+            $('#axs_action_btn').click(onAXSButtonClicked);
+            $('#banks_action_btn').click(onBanksButtonClicked);
+            $('#debug').html("User Agent: " + navigator.userAgent + "<br/><br/>" + "Is Mobile Device: " +
+                isMobileDevice() + "<br/><br/>" + "Is iPhone: " + isiPhone());
+            $('#window_debug').html("Window is freshly loaded @ " + GetDateTimeNow());
+            document.addEventListener(visibilityChange, onVisibilityChange);
+        });
 
-   function onVisibilityChange(){
-     if(document[state] == 'hidden')
-     {
-      $('#window_debug').append("</br></br>Browser have been possibly switched to another app @ " + GetDateTimeNow());
-      ts_leavebrowser = new Date();
-      ts_enteredbrowser = undefined;
-     }
-     else
-     {
-      ts_enteredbrowser = new Date();
-      var elapsedSeconds = (ts_enteredbrowser - ts_leavebrowser)/1000;
-      $('#window_debug').append("</br></br>Time elapsed since browser was left hidden : " + elapsedSeconds);
-      if(elapsedSeconds > assume_is_axs_threshold_seconds && isAxsButtonClicked){
-        $('#window_debug').append("</br></br>Time elapsed since browser is more than 5 seonds since AXS button clicked: Check for any AXS transaction");
-      }
-     }
-    };
+        function onVisibilityChange() {
+            if (document[state] == 'hidden') {
+                $('#window_debug').append("</br></br>Browser have been possibly switched to another app @ " +
+                    GetDateTimeNow());
+                ts_leavebrowser = new Date();
+                ts_enteredbrowser = undefined;
+            } else {
+                ts_enteredbrowser = new Date();
+                var elapsedSeconds = (ts_enteredbrowser - ts_leavebrowser) / 1000;
+                $('#window_debug').append("</br></br>Time elapsed since browser was left hidden : " + elapsedSeconds);
+                if (elapsedSeconds > assume_is_axs_threshold_seconds && isAxsButtonClicked) {
+                    $('#window_debug').append(
+                        "</br></br>Time elapsed since browser is more than 5 seonds since AXS button clicked: Check for any AXS transaction"
+                        );
+                }
+            }
+        };
 
-    function GetDateTimeNow()
-    {
-      var d = new Date();
-      return d.getMonth() + 1 + "/" + d.getDate() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
-    }
+        function GetDateTimeNow() {
+            var d = new Date();
+            return d.getMonth() + 1 + "/" + d.getDate() + "/" + d.getFullYear() + " " + d.getHours() + ":" + d
+                .getMinutes() + ":" + d.getSeconds();
+        }
 
-    function onAXSButtonClicked()
-    {
-      ts_axs_btn_clicked = new Date();
-      setTimeout(VisitAXSStoreURI, 1000);
-      redirectVar = window.location.replace('axsredirection://invalidlor.com/plsfail-app.cfm');
-      isAxsButtonClicked = true;
-    }
+        function onAXSButtonClicked() {
+            ts_axs_btn_clicked = new Date();
+            setTimeout(VisitAXSStoreURI, 1000);
+            redirectVar = window.open('axsredirection://invalidlor.com/plsfail-app.cfm');
+            isAxsButtonClicked = true;
+        }
 
-    function onBanksButtonClicked()
-    {
-      window.open("https://internet.ocbc.com/internet-banking/");
-      isAxsButtonClicked = false;
-    }
+        function onBanksButtonClicked() {
+            window.open("https://internet.ocbc.com/internet-banking/");
+            isAxsButtonClicked = false;
+        }
 
-    function VisitAXSStoreURI() {
-      
-      if(document[state] == 'hidden')
-      {
-         setTimeout(VisitAXSStoreURI, 500);
-         return;
-      }
-      alert('Document visibilityState: ' + document.visibilityState);
-      var elapsedSeconds = (new Date() - ts_axs_btn_clicked)/1000;
-      alert(elapsedSeconds);
-      if(elapsedSeconds < 5)
-      {
-         if(isiPhone()){
-            window.open(axs_ios_store_url);
-         }
-         else{
-            window.location = axs_android_store_url;
-         } 
-      }
-      
-    }
+        function VisitAXSStoreURI() {
 
-    function isiPhone(){
-        return (
-            (navigator.platform.indexOf("iPhone") != -1) ||
-            (navigator.platform.indexOf("iPod") != -1)
-        );
-    }
+            if (document[state] == 'hidden') {
+                setTimeout(VisitAXSStoreURI, 500);
+                return;
+            }
+            var elapsedSeconds = (new Date() - ts_axs_btn_clicked) / 1000;
+            if (elapsedSeconds < 5) {
+                var confirmToViewAXSInstructions = confirm(
+                    'We have detected that you may not have AXS m-Station installed. Do you want to visit the store to download it?'
+                    );
+                if(confirmToViewAXSInstructions){
+                    if (isiPhone()) {
+                        window.open("axs_ios_store_url");
+                    } else {
+                        window.open(axs_android_store_url);
+                    }
+                }
+                
+            }
 
-    function isMobileDevice() {
-      return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-    };
+        }
+
+        function isiPhone() {
+            return (
+                (navigator.platform.indexOf("iPhone") != -1) ||
+                (navigator.platform.indexOf("iPod") != -1)
+            );
+        }
+
+        function isMobileDevice() {
+            return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+        };
     </script>
-  </body>
+</body>
+
 </html>
