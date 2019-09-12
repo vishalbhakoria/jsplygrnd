@@ -106,11 +106,8 @@
                 return;
             }
             var elapsedSeconds = (new Date() - ts_axs_btn_clicked) / 1000;
-            if(elapsedSeconds<1)
-            {
-                didUserLeaveBrowser = false;
-            }
-            else if (elapsedSeconds < 3) {
+            alert('Elapsed Seconds' + elapsedSeconds);
+            if (elapsedSeconds < 3) {
                 var confirmToVisitAppStore = confirm(
                     'We have detected that you may not have AXS m-Station installed. Do you want to visit the store to download it?'
                     );
