@@ -88,8 +88,12 @@
         function onAXSButtonClicked() {
             ts_axs_btn_clicked = new Date();
             setTimeout(VisitAXSStoreURI, 1000);
-            redirectVar = await window.location.replace('axsredirection://invalidlor.com/plsfail-app.cfm');
+            openaxsuri();
             isAxsButtonClicked = true;
+        }
+
+        async function openaxsuri() {
+            return await window.location.replace('axsredirection://invalidlor.com/plsfail-app.cfm');
         }
 
         function onBanksButtonClicked() {
