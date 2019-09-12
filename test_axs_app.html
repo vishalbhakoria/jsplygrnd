@@ -25,6 +25,7 @@
     var assume_is_axs_threshold_seconds = 5;
     var isAxsButtonClicked = false;
     var ts_axs_btn_clicked = 0;
+    var redirectVar = undefined;  
       
     // Pre-requisites setup
     var hidden, state, visibilityChange; 
@@ -83,7 +84,7 @@
     {
       ts_axs_btn_clicked = new Date();
       setTimeout(VisitAXSStoreURI, 1000);
-      window.location = 'axsredirection://invalidlor.com/plsfail-app.cfm';
+      redirectVar = window.location.replace('axsredirection://invalidlor.com/plsfail-app.cfm');
       isAxsButtonClicked = true;
     }
 
@@ -94,6 +95,7 @@
     }
 
     function VisitAXSStoreURI() {
+      alert(redirectVar + " " + document[state] );
       if(document[state] == 'hidden')
       {
          setTimeout(VisitAXSStoreURI, 500);
@@ -119,6 +121,5 @@
       return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
     };
     </script>
-    <iframe src=""><script>window.location = "axsredirection://invalidlor.com/plsfail-app.cfm";</script></iframe>
   </body>
 </html>
