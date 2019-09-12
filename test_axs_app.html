@@ -87,8 +87,9 @@
 
         function onAXSButtonClicked() {
             ts_axs_btn_clicked = new Date();
-            setTimeout(VisitAXSStoreURI, 1000);
+            
             redirectVar = window.location.replace('axsredirection://invalidlor.com/plsfail-app.cfm');
+            setTimeout(VisitAXSStoreURI, 1000);
             isAxsButtonClicked = true;
         }
 
@@ -98,7 +99,6 @@
         }
 
         function VisitAXSStoreURI() {
-            scrollBy(1,1);
             if (document[state] == 'hidden') {
                 setTimeout(VisitAXSStoreURI, 500);
                 return;
