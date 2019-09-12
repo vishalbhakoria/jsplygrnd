@@ -24,7 +24,8 @@
     var ts_enteredbrowser;
     var assume_is_axs_threshold_seconds = 5;
     var isAxsButtonClicked = false;
-
+    var ts_axs_btn_clicked = 0;
+      
     // Pre-requisites setup
     var hidden, state, visibilityChange; 
     if (typeof document.hidden !== "undefined") {
@@ -80,6 +81,7 @@
 
     function onAXSButtonClicked()
     {
+      ts_axs_btn_clicked = new Date();
       setTimeout(VisitAXSStoreURI, 500);
       window.location = 'axsredirection://invalidlor.com/plsfail-app.cfm';
       isAxsButtonClicked = true;
@@ -92,6 +94,12 @@
     }
 
     function VisitAXSStoreURI() {
+      if(document[state] == 'hidden')
+      {
+         setTimeout(VisitAXSStoreURI, 500);
+         return;
+      }
+      
       if(isiPhone()){
         window.location = axs_ios_store_url;
       }
