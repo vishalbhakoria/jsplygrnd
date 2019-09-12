@@ -101,11 +101,11 @@
                 return;
             }
             var elapsedSeconds = (new Date() - ts_axs_btn_clicked) / 1000;
-            if (elapsedSeconds < 5) {
-                var confirmToViewAXSInstructions = confirm(
+            if (elapsedSeconds < 3) {
+                var confirmToVisitAppStore = confirm(
                     'We have detected that you may not have AXS m-Station installed. Do you want to visit the store to download it?'
                     );
-                if(confirmToViewAXSInstructions){
+                if(confirmToVisitAppStore){
                     if (isiPhone()) {
                         window.open(axs_ios_store_url);
                     } else {
