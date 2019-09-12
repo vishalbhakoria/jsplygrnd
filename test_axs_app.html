@@ -27,6 +27,7 @@
         var isAxsButtonClicked = false;
         var ts_axs_btn_clicked = 0;
         var redirectVar = undefined;
+        var visible = true;
 
         // Pre-requisites setup
         var hidden, state, visibilityChange;
@@ -59,7 +60,8 @@
         });
 
         function onVisibilityChange() {
-            if (document[state] == 'hidden') {
+            ToggleVisibility()
+            if (document[state] == 'hidden' || !visible) {
                 $('#window_debug').append("</br></br>Browser have been possibly switched to another app @ " +
                     GetDateTimeNow());
                 ts_leavebrowser = new Date();
@@ -115,6 +117,11 @@
                 
             }
 
+        }
+
+        function ToggleVisibility()
+        {
+            visible = !visible;
         }
 
         function isiPhone() {
