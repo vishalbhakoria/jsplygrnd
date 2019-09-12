@@ -28,6 +28,7 @@
         var ts_axs_btn_clicked = 0;
         var redirectVar = undefined;
         var visible = true;
+        var didUserLeaveBrowser = false;
 
         // Pre-requisites setup
         var hidden, state, visibilityChange;
@@ -97,13 +98,17 @@
         }
 
         function VisitAXSStoreURI() {
-
+            scrollBy(1,1);
             if (document[state] == 'hidden') {
                 setTimeout(VisitAXSStoreURI, 500);
                 return;
             }
             var elapsedSeconds = (new Date() - ts_axs_btn_clicked) / 1000;
-            if (elapsedSeconds < 3) {
+            if(elapsedSeconds<1)
+            {
+                didUserLeaveBrowser = false;
+            }
+            else if (elapsedSeconds < 3) {
                 var confirmToVisitAppStore = confirm(
                     'We have detected that you may not have AXS m-Station installed. Do you want to visit the store to download it?'
                     );
