@@ -101,6 +101,7 @@
          setTimeout(VisitAXSStoreURI, 500);
          return;
       }
+      alert('Document hasFocus: ' + document.hasFocus());
       var elapsedSeconds = (new Date() - ts_axs_btn_clicked)/1000;
       alert(elapsedSeconds);
       if(elapsedSeconds < 5)
