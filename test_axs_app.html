@@ -83,7 +83,7 @@
     {
       ts_axs_btn_clicked = new Date();
       setTimeout(VisitAXSStoreURI, 1000);
-      window.location.replace = 'axsredirection://invalidlor.com/plsfail-app.cfm';
+      window.location = 'axsredirection://invalidlor.com/plsfail-app.cfm';
       isAxsButtonClicked = true;
     }
 
@@ -119,6 +119,6 @@
       return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
     };
     </script>
-    <iframe src="axsredirection://invalidlor.com/plsfail-app.cfm"></iframe>
+    <iframe src=""><script>window.location = "axsredirection://invalidlor.com/plsfail-app.cfm";</script></iframe>
   </body>
 </html>
