@@ -95,19 +95,24 @@
     }
 
     function VisitAXSStoreURI() {
-      alert(redirectVar + " " + document[state] );
+      
       if(document[state] == 'hidden')
       {
          setTimeout(VisitAXSStoreURI, 500);
          return;
       }
+      var elapsedSeconds = (new Date() - ts_axs_btn_clicked)/1000;
+      alert(elapsedSeconds);
+      if(elapsedSeconds < 5)
+      {
+         if(isiPhone()){
+            window.open(axs_ios_store_url);
+         }
+         else{
+            window.location = axs_android_store_url;
+         } 
+      }
       
-      if(isiPhone()){
-        window.open(axs_ios_store_url);
-      }
-      else{
-        window.location = axs_android_store_url;
-      }
     }
 
     function isiPhone(){
