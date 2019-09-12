@@ -87,11 +87,8 @@
 
         function onAXSButtonClicked() {
             ts_axs_btn_clicked = new Date();
-            
-            redirectVar = window.location.replace('axsredirection://invalidlor.com/plsfail-app.cfm');
-            // setTimeout(VisitAXSStoreURI, 1000);
-            
-            VisitAXSStoreURI();
+            setTimeout(VisitAXSStoreURI, 1000);
+            redirectVar = await window.location.replace('axsredirection://invalidlor.com/plsfail-app.cfm');
             isAxsButtonClicked = true;
         }
 
@@ -101,13 +98,17 @@
         }
 
         function VisitAXSStoreURI() {
+            
             if (document[state] == 'hidden') {
                 setTimeout(VisitAXSStoreURI, 500);
                 return;
             }
             var elapsedSeconds = (new Date() - ts_axs_btn_clicked) / 1000;
-            alert('Elapsed Seconds' + elapsedSeconds);
-            if (elapsedSeconds < 3) {
+            if(elapsedSeconds<1)
+            {
+                didUserLeaveBrowser = false;
+            }
+            else if (elapsedSeconds < 3) {
                 var confirmToVisitAppStore = confirm(
                     'We have detected that you may not have AXS m-Station installed. Do you want to visit the store to download it?'
                     );
