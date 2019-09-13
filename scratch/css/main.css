@@ -456,6 +456,10 @@ h2 {
     border-radius: 5px;
 }
 
+#nric_submit_btn {
+    width: 100%!important;
+}
+
 /* Animation */
 .fade-in {
     opacity: 0;
