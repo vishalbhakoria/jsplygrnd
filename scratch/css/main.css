@@ -454,10 +454,13 @@ h2 {
 
 #id_input {
     border-radius: 5px;
+    padding: 3ch;
+    letter-spacing: 1ch;
+    width: 14ch;
 }
 
 #nric_submit_btn {
-    width: 100%!important;
+    width: 14ch!important;
 }
 
 /* Animation */
