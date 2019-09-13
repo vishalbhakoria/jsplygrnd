@@ -67,6 +67,13 @@ p {
    font-size: 16px;
 }
 
+h1 {
+    font-family: 'SourceSansPro-Bold', 'Source Sans Pro Bold', 'Source Sans Pro';
+    font-size: 28px;
+    font-weight: 650;
+    margin-bottom: 25px;
+}
+
 h2 {
     font-family: 'SourceSansPro-Bold', 'Source Sans Pro Bold', 'Source Sans Pro';
     font-size: 20px;
@@ -424,6 +431,10 @@ h2 {
     position: relative;
     left: -71px;
     top: 44px;
+}
+
+.grecaptcha-badge { 
+    display:none !important; 
 }
 
 /* Animation */
