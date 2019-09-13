@@ -119,3 +119,4 @@ for (var i=0; i<revealElements.length; i++) {
                     .setClassToggle(revealElements[i], "visible") 
                     .addTo(controller);
 }
+
