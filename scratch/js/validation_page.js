@@ -1,4 +1,4 @@
 function onSubmit()
 {
-    alert('meow')
+    window.location.replace('landing.html')
 }
