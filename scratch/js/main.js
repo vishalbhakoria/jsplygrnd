@@ -15,7 +15,20 @@ function fixCalloutsPosition(){
 }
 
 
-var controller = new ScrollMagic.Controller();
+var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      //  triggerHook: 'onLeave',
+    }
+});
+
+//Curtain Effect
+
+new ScrollMagic.Scene({
+        triggerElement: ".introduction-wrapper",
+        triggerHook: 0
+    })
+    .setPin(".introduction-wrapper", {pushFollowers: false})
+    .addTo(controller);
 
 new ScrollMagic.Scene({
     triggerElement: "#annual_value_img",
