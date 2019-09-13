@@ -36,8 +36,17 @@
         </div>   
       </div>
       <div class="row col-xs-12 col-sm-12 white-bg" id="submit_row">
+          <div class="col-xs-12 col-sm-12 white-bg flex-center" id="submit_btn_container">
+            <button id="nric_submit_btn">Submit</button>
+          </div>
+      </div>
+      <div class="row col-xs-12 col-sm-12 white-bg" id="recaptcha_row">
           <div class="col-xs-12 col-sm-12 white-bg flex-center" id="recaptcha_container">
-              <button class="g-recaptcha" data-sitekey="6LdTprMUAAAAANyFqqVN0zjvY9uHHBX844QPM71U" data-callback='onSubmit' data-badge="inline">Submit</button>
+              <div id='recaptcha' class="g-recaptcha"
+              data-sitekey="6LdTprMUAAAAANyFqqVN0zjvY9uHHBX844QPM71U"
+              data-callback="onSubmit"
+              data-size="invisible"
+              data-badge="inline"></div>  
           </div> 
       </div>
     </div> <!-- /container -->
