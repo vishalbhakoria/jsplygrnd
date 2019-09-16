@@ -1,7 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Static Template</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 </head>
+
 <body>
 Test Keycode: <input type="tel" id="target"/>
 <div id="result">
@@ -10,7 +17,7 @@ Test Keycode: <input type="tel" id="target"/>
 $( "#target" ).keyup(function( event ) {
  $("#result").append(event.which + "</br>");
 })
-
 </script>
 </body>
+
 </html>
