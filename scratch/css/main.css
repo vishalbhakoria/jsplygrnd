@@ -453,10 +453,12 @@ h2 {
 }
 
 #id_input {
+    padding-left: 24px!important;
     border-radius: 5px;
     padding: 3ch;
-    letter-spacing: 1ch;
+    letter-spacing: 1.11ch;
     width: 14ch;
+    text-align: center;
 }
 
 #nric_submit_btn {
