@@ -730,6 +730,8 @@ h1 {
 .axs-img {
     height: 18px;
     width: 95px;
+    position: relative;
+    top: 4px;
 }
 
 .copy-div {
@@ -912,6 +914,7 @@ h1 {
 .logo-img {
     width: 43px;
     padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 
