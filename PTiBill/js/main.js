@@ -2,11 +2,14 @@ $(document).ready(fixCalloutsPosition);
 $(window).resize(fixCalloutsPosition);
 $(window).scroll(fixCalloutsPosition);
 
-//$('#revisionAnnualId').hide();
+$('#revisionAnnualId').hide();
 
 //$('.col-xs-6 col-sm-6 header-text fade-right').fadeOut(function() { $('.popover').popover('dispose') });
 
 $("[data-toggle=popover]").popover({ html: true, title: '<a href="#" class="close" data-dismiss="alert">&times;</a>' })
+
+//$('#revisionAnnualId').hide();
+
 
 $(document).on("click", ".popover .close", function () {
     $(this).parents(".popover").popover('hide');
@@ -15,6 +18,7 @@ $(document).on("click", ".popover .close", function () {
 $(document).on('click', "#av_find_out_more_text", function () {
     //$('#revisionAnnualId').show();
     //$('#annual_value_sectionId').hide();
+    $('#revisionAnnualId').show();
     toggleDivs();
 });
 
@@ -50,9 +54,6 @@ $('.popover-dismiss').popover({
     trigger: 'focus'
 })
 
-
-
-
 /*Header Code*/
 
 window.onscroll = function () { myFunction() };
@@ -61,6 +62,7 @@ var header = document.getElementById("myHeader");
 var sticky = 174;
 
 function myFunction() {
+    $('#revisionAnnualId').hide();
     if (window.pageYOffset > sticky) {
         header.classList.add("sticky");
         header.classList.remove("fadeOut");
