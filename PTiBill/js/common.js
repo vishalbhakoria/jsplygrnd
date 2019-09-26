@@ -1,4 +1,4 @@
-﻿/* new script */
+/* new script */
 $('#divErrorId').hide();
 
 // Visibility Change Setup
@@ -124,7 +124,11 @@ $(document).ready(function () {
 
 $(function () {
     $('#copytext').on('hide.bs.popover', function (e) {
+        //onCopy();
+    });
+    $('#myid').click(function(){
         onCopy();
+        $('#copytext').click();
     });
 });
 $('.popover-dismiss').popover({
@@ -152,7 +156,7 @@ $(document).ready(function () {
 function onAxsBtnClicked() {
     if (window.confirm('You will be redirect to the AXS m-Station app to complete the payment. Please ensure that you have the app installed.')) {
         axs_btn_clicked = true;
-        window.open('axsredirection://');
+        window.location = 'axsredirection://';
     }
     else {
         axs_btn_clicked = false;
