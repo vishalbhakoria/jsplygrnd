@@ -1,3 +1,7 @@
+.line-Padding {
+    padding-bottom: 0px !important;
+}
+
 body {
     overflow-x:hidden!important;
     width: 100%!important;
@@ -185,6 +189,7 @@ h2 {
 
 .education-message img{
     top: 5px;
+    width:210px;
 }
 
 .blue-section-header > .header-text{
