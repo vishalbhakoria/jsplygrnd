@@ -1,0 +1,344 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            padding-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="font/font_source_sans_pro.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+    <div class="contentmedia mobile-screen-size" id="mediaId" style="font-family: 'SourceSansPro-Bold', 'Source Sans Pro Bold', 'Source Sans Pro';">
+        <img src="Images/icon-error-desktop.png" />
+        <h1>Unsupported Screen Resolution</h1>
+        Please switch to a mobile device to view.
+    </div>
+
+    <div id="form1" class="min-screen max-screen desktop-detected">
+        <div class="header col-xs-12 col-sm-12" id="myHeader">
+            <img class="logo-img" src="images/logo.png" />
+            <img class="bookmark-img" src="images/bookmark.png" />
+            <a href="#" onclick="javascript:onViewIBill();">
+                <img class="bookmark-pdf-img" src="images/bookmark-pdf.png" />
+            </a>
+        </div>
+
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="jumbotron introduction-wrapper col-xs-12 col-sm-12">
+            <div class="introduction-background"><img src="css/images/banner-hero.jpg" /></div>
+            <div class="container introduction-text col-xs-6 col-sm-6">
+                <p>Dear Mr Ong,</p>
+                <p>Welcome to your <b>Year 2020</b> property tax bill for your unit at <b>9999 Tanah Merah kechil Road South #XXX-XXXX</b></p>
+                <p>Your property tax of <b>$1,120.00</b> is due by <b>31 Jan 2020</b></p>
+            </div>
+        </div>
+        <div class="askJamie" id="askJamie1">
+            <a class="askJamieContent" style="font-family: 'SourceSansPro-Regular', 'Source Sans Pro'; font-weight: 400; color: #FFFFFF; transform: rotate(270deg); white-space: nowrap; text-decoration: none;" onclick="javascript: onAskJamie();">Ask Jamie</a>
+        </div>
+        <div class="container">
+            <div class="row white-bg padding">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 giro-message text-center center-block">
+                    <p>Choose to pay immediately or join GIRO for interest-free instalments at $94/ month.</p>
+                    <p class="buttons flex-center">
+                        <a class="btn btn-default white-btn col-xs-12 col-sm-5" href="#" onclick="javascript: onPayTax();" role="button">PAY TAXES</a>
+                        <span class="spacer col-xs-0 col-sm-2">&nbsp;</span>
+                        <a class="btn btn-default orange-btn col-xs-12 col-sm-5" href="#" role="button" onclick="javascript: onApplyGiro()">APPLY GIRO</a>
+                    </p>
+                </div>
+            </div>
+            <div class="row white-bg padding">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center arrow-text-bounce bounce">
+                    <span>SCROLL</span>
+                    <br />
+                    <img src="images/scroll-img.png" height="30" />
+                </div>
+            </div>
+            <div class="row education-message">
+                <!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ibill-max-width">
+                &nbsp;
+            </div>-->
+                <div class="col-xs-12 col-sm-12 nation-text">
+                    <h2 class="header-text">Our Taxes, Our Nation</h2>
+                </div>
+                <div class="col-xs-12 col-sm-12 ibill-max-width">
+                    &nbsp;
+                </div>
+                <div class="col-xs-12 col-sm-12 annual-value-left nation-text">
+                    <img src="images/singapore_map.png" />
+                </div>
+                <div class="col-xs-12 col-sm-12 nation-text">
+                    <p>The tax you pay will go towards our education system, giving every child the opportunity to receive at least 10 years of quality school education.</p>
+                </div>
+            </div>
+
+            <div class="row blue-section-header">
+                <p class="col-xs-12 col-sm-12 header-text fade-right">What is Property Tax?</p>
+                <div class="col-xs-12 col-sm-12 fade-right">
+                    <img src="images/blue_header_underline.png" />
+                </div>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 fade-right">
+                    <p>Property Tax is a tax on property ownership. It is computed based on the Annual Value of your property at <b style="font-size:20px">$36,000</b>  multiplied by property tax rates.</p>
+                </div>
+                <div class="col-xs-2 ibill-max-width float-right fade-left">
+                    <img class="stripe" src="images/blue_hollow_stripe.png" />
+                </div>
+            </div>
+
+            <div class="row property-tax-calculation">
+                <div class="flex-center fade-in">
+                    <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 ibill-max-width flex-center" id="pt-calc-img-container">
+                        <img src="images/calculator.png" />
+                    </div>
+                    <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" id="pt-calc-details-container">
+                        <div class="pt-calc-header">
+                            <p class="ibill-bold">Property Tax Calculation</p>
+                        </div>
+                        <div class="pt-line-items">
+                            <table class="pt-line-items-table">
+                                <tr>
+                                    <td>
+                                        First $8,000
+                                    </td>
+                                    <td>
+                                        $0.00
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Next $28,000 @ 4%
+                                    </td>
+                                    <td>
+                                        $1,120.00
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="pt-calc-line-break"><hr /></div>
+                        <div class="pt-calc-total">
+                            <table class="pt-calc-total-table">
+                                <tr>
+                                    <td class="ibill-bold">Total Tax Payable</td>
+                                    <td class="ibill-bold">$1,120.00</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="pt-calc-due-date">
+                            <p>Payment due date is 31 January 2020</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row orange-section-header annual-value" id="container">
+                <!-- mid-slider start -->
+                <div id="inner">
+                    <div class="row blue-section-header annual-value-left padding-section float-right" style="padding-left: 10px;" id="revisionAnnualId">
+                        <p class="col-xs-6 col-sm-6 header-text linespace">Your 2020 Annual Value</p>
+                        <div class="col-xs-12 col-sm-12">
+                            <img src="images/blue_header_underline.png" />
+                        </div>
+                        <div class="col-xs-6 col-sm-6">
+                            <p class="header-pay-text bold-font fade-right sub-header">Revision in Annual Value</p>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ibill-max-width float-right">
+                            <img class="stripe-right" src="images/revision_blue_stripe.png" />
+                            <img class="revision-annual-img" src="images/calculator.png" />
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <p>
+                                Your
+                                <a role="button" data-placement="top" class="popovers" data-toggle="popover" tabindex="0" data-trigger="focus" data-content="IRAS reviews your Annual Value to reflect the changes in the market rental values of comparable properties.">Annual Value</a>
+                                has been revised from $33,000 to $36,000 from 1 January 2020, in line with market rents of similar properties in your neighbourhood.
+                            </p>
+                        </div>
+
+                        <!--<div class="clearfix"></div><br><br>-->
+                        <div class="col-xs-12 col-sm-12 flex-center" id="av_back_text">
+                            <div class="float-right">
+                                <img class="back-arrow" src="images/arrow-back.png" />
+                            </div>
+                            <span class="spacer col-xs-0 col-sm-2">&nbsp;</span>
+                            <p class="ibill-bold" id="pId_back" style="font-size:16px">
+                                Back
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="row orange-section-header annual-value-left padding-section" style="padding-left: 10px;" id="annual_value_sectionId">
+                        <p class="col-xs-12 col-sm-12 header-text annual-value-left">Annual Value Explained</p>
+                        <div class="col-xs-12 col-sm-12 annual-value-left">
+                            <img src="images/orange_header_underline.png" />
+                        </div>
+                        <!--<div class="col-xs-12 col-sm-12">
+                        <p class="header-pay-text bold-font fade-right"> Heading is missing here </p>
+                    </div>-->
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 annual-value-left">
+                            <p>An Annual Value of <b style="font-size:20px">$36,000</b> means that IRAS has assessed that your property can fetch an estimated monthly rent of $3,000 on an unfurnished basis, assuming t it is rented out.</p>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ibill-max-width float-right">
+                            <img class="stripe-right" src="images/orange_stripe.png" />
+                            <img class="annual-value-image" id="annual_value_img" src="images/buildings.png" />
+                        </div>
+                        <div class="clearfix"></div><br><br>
+                        <div class="col-xs-12 col-sm-12 flex-center" id="av_find_out_more_text">
+                            <p class="ibill-bold" id="pId_annualmore" style="font-size:16px">
+                                Find out more about Annual Value
+                            </p>
+                            <div class="float-right">
+                                <img class="orange-right-arrow" src="images/right_arrow_orange.png" />
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <!-- mid-slider end -->
+
+            <div class="row" id="comparables-section-stripe">
+                <div class="col-xs-12 ibill-max-width float-left nopadding">
+                    <img class="stripe-left" src="images/stripe_left_hollow.png" />
+                </div>
+            </div>
+
+            <div class="row comparables-intro-section flex-center" id="comparables-intro-section">
+                <div class="col-xs-3 comparable-intro-img-wrapper flex-center">
+                    <img id="comparable-intro-img" src="images/location_marker.svg" />
+                </div>
+                <div class="col-xs-8 ibill-bold" id="comparable_intro_text">
+                    <p>
+                        Let's look at the gross rental contracted in your neighbourhood (Statistics from URA)
+                    </p>
+                    <div class="col-xs-12 col-sm-12 black-stripe">
+                        <img src="images/black-stripe.png" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row comparables-section" id="comparables-section">
+                <div class="col-xs-12 nopadding flex-center">
+                    <img id="comparable_img" class="tick-image nopadding" src="images/comparables.png" />
+                </div>
+                <div class="col-xs-12 nopadding" id="callouts">
+                    <div class="callout">
+                        <img src="images/chat_bubble.png" />
+                        <p>$99,999</p>
+                    </div>
+                    <div class="callout">
+                        <img src="images/chat_bubble.png" />
+                        <p>$88,999</p>
+                    </div>
+                    <div class="callout">
+                        <img src="images/chat_bubble.png" />
+                        <p>$77,999</p>
+                    </div>
+                    <div class="callout">
+                        <img src="images/chat_bubble.png" />
+                        <p>$66,999</p>
+                    </div>
+                    <div class="callout">
+                        <img class="callout5th-img" src="images/chat_bubble.png" />
+                        <p>$66,999</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="gradient-box orange-gradient flex-center col-xs-12 col-sm-12 fade-in nopadding">
+                        <span class="tick-image-container flex-center">
+                            <img class="tick-image" src="images/tick.png" />
+                        </span>
+                        <p class="gradient-box-text">
+                            Considering all the contracted gross rentals for similar properties in your neighbourhood, the Annual Value of $36,000, or $3,000 per month, is fair.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row darkblue-section-header annual-value padding-section">
+                <p class="col-xs-6 col-sm-6 header-text fade-right linespace">Concessionary owner-occupied tax rate</p>
+                <div class="col-xs-12 col-sm-12 fade-right">
+                    <img src="images/dark_blue_header_underline.png" />
+                </div>
+                <div class="col-xs-6 col-sm-6 fade-right">
+                    <p class="header-pay-text bold-font sub-header">Pay lower tax</p>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ibill-max-width float-right">
+                    <div class="ibill-cloud">
+                        <div class="col-xs-12 col-sm-12">
+                            <img src="images/cloud.png" />
+                        </div>
+                        <div class="flex-center cloud-strips-image">
+                            <img src="images/cloud_stripe_big.png" />
+                            <img src="images/cloud_stripe_small.png" />
+                        </div>
+                    </div>
+                    <img class="stripe" src="images/dark_blue_stripe.png" />
+                    <img class="key-image fade-left" id="key_img" src="images/key.svg" />
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 fade-up">
+                    <p>
+                        As you are staying in your property, you enjoy the
+                        <a role="button" data-placement="top" class="popovers" data-toggle="popover" data-content="Concessionary owner-occupier tax rates are progressive and range from 0% - 16%, based on the annual value, while non-owner-occupier tax rates range from 10% - 20%." tabindex="0" data-trigger="focus">concessionary owner-occupier tax rates</a>
+                        , which are lower.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="gradient-box blue-gradient flex-center col-xs-12 col-sm-12 fade-in nopadding">
+                        <span class="tick-image-container flex-center">
+                            <img class="tick-image" src="images/ootr-key.png" width="71" height="60" />
+                        </span>
+                        <p class="gradient-box-text">
+                            In fact, you would have to pay S3,720 in property tax if you were to rent out your property.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 giro-message text-center center-block">
+                    <p>Choose to pay immediately or join GIRO for interest-free instalments at $94/ month.</p>
+                    <p class="buttons flex-center">
+                        <a class="btn btn-default white-btn col-xs-12 col-sm-5"href="#" onclick="javascript: onPayTax();" role="button">PAY TAXES</a>
+                        <span class="spacer col-xs-0 col-sm-2">&nbsp;</span>
+                        <a class="btn btn-default orange-btn col-xs-12 col-sm-5" href="#" role="button" onclick="javascript: onApplyGiro()">APPLY GIRO</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="row footer-section nopadding">
+                <img src="images/building_footer.png" />
+                <div class="solid-blue-background"></div>
+            </div>
+        </div><!-- /container -->
+    </div>
+
+ 
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/ScrollMagic.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>

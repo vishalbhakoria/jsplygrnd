@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            padding-bottom: 20px;
+        }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="font/font_source_sans_pro.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body>
+
+        <div class="col-xs-12 col-sm-12">
+            <h1 class="sub-header bold-font">Pay Taxes</h1>
+        </div>
+        <!--<div class="col-xs-12 col-sm-12">
+            &nbsp;
+        </div>-->
+        <div class="col-xs-12 col-sm-12">
+            <a href="#" onclick="javascript: onBack()">&lt;Back to Property iBill</a>
+        </div>
+        <div class="container">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="row padding white-bg">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h2 class="sub-header">Payment Mode Selection</h2>
+                    </div>
+                </div>
+                <div class="row col-xs-12 col-sm-12 white-bg">
+                    <p>You have chosen to pay for your Property Tax.</p>
+                    <p>The tax reference no. is <b>1234567A</b> and amount payable is <b>$1,120.00</b>.</p>
+                </div>
+                <div class="row col-xs-12 col-sm-12 white-bg">
+                    <h4>Preferred Mode of Payment</h4>
+                    <p class="axis-text">(AXS Mobile App Required)</p>
+                </div>
+                <div class="row col-xs-12 col-sm-12 axsCell">
+                    <a href="#" onclick="javascript:onAxsBtnClicked();">
+                        <img class="axs-img" src="images/axs-img.png" />
+                    </a>
+                </div>
+
+                <div class="row col-xs-12 col-sm-12 white-bg">
+                    <hr />
+                </div>
+                <div class="row col-xs-12 col-sm-12 white-bg">
+                    <p>
+                        Other available modes via internet banking:
+                    </p>
+                    <p class="axis-text">
+                        <i>(Tax reference number and amount payable are required to be entered during payment.)</i>
+                    </p>
+                </div>
+                <!--<input class="copy-input white-bg" type="text" value="1234567" id="myInput" readonly style="display:none">-->
+                <div class="row col-xs-12 col-sm-12 white-bg">
+
+                    <div class="col-xs-12 col-sm-12" style="border: groove;">
+                        <input class="copy-input white-bg" type="text" value="1234567A" id="myInput" readonly style="border:none">
+                        <div id="myid" class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                            <img class="copy-img" src="images/copy-img.png" id="copyimageId" />
+                            <a data-toggle="popover" id="copytext" data-content="Number copied" tabindex="0" data-trigger="focus" data-placement="top" style="text-decoration: none;">Copy</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row col-xs-12 col-sm-12 white-bg">
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 div-bank">
+                        <a href="#" onclick="javascript:onDBSBank();">
+                            <img class="dbs-img img-fluid" alt="Responsive image" src="images/dbs-bank.png" />
+                        </a>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        &nbsp;
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 div-bank">
+                        <a href="#" onclick="javascript:onOCBCBank();">
+                            <img class="ocbc-img img-fluid" alt="Responsive image" src="images/ocbc-bank.png" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row col-xs-12 col-sm-12 white-bg">
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 div-bank">
+                        <a href="#" onclick="javascript:onPOSBBank();">
+                            <img class="posb-img" src="images/posb-bank.png" />
+                        </a>
+                    </div>
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        &nbsp;&nbsp;
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 div-bank">
+                        <a href="#" onclick="javascript:onUOBBank();">
+                            <img class="uob-img" src="images/uob-bank.png" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row footer-section nopadding">
+            <div class="solid-blue-background"></div>
+        </div>
+
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/common.js"></script>
+</body>
+</html>

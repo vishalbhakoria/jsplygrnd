@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body {
+            /* padding-top: 50px; */
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            display: block;
+            background: #a00;
+            color: #fff;
+            padding: 5px 10px;
+            margin: 0;
+            position: absolute;
+            width: 100%;
+            top: 40px;
+        }
+
+        .pin {
+            position: absolute;
+            top: 15px;
+        }
+        #u168
+        {
+            
+            position:fixed;
+        }
+
+        #viewId {
+          padding: 5px;
+          text-align: center;
+          background-color: #e5eecc;
+          border: solid 1px #c3c3c3;
+        }
+
+        #viewId {
+          /*padding: 50px;*/
+          /*height: 67px;*/
+          
+          display: none;
+        }
+
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link href="font/font_source_sans_pro.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+</head>
+<body>
+    <section class="demo">
+        <!--<div class="row" id="viewId" style="background-color:antiquewhite">
+        <p><span>View Your Bill</span></p>
+    </div>-->
+        <div class="row" style="padding-bottom:0px">
+            <div>
+                <img class="bookmark-img" src="images/bookmark.png" />
+                <img class="bookmark-pdf-img" src="images/bookmark-pdf.png" />
+                <p class="bookmark-text">View Your Bill</p>
+            </div>
+            <div id="viewId" style="background-color:rgba(242, 242, 242, 1);">View Your Bill</div>
+        </div>
+        
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+
+
+
+        <div id="u168" style="background-color:aqua">
+            <p><span>Ask Jamie</span></p>
+        </div>
+
+        <div>
+            <img class="bookmark-pdf-img bounce" src="images/bookmark-pdf.png" />
+        </div>
+
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+
+        <p>inner content here</p>
+        <p>inner content here</p>
+        <p>inner content here</p>
+    </section>
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/ScrollMagic.min.js"></script>
+    <script src="js/jquery.pin.js"></script>
+    <script>
+        $("#viewId").hide();
+        $("#viewId").pin();
+        $('.pin-wrapper').css({ "height": "0px" });
+
+            $(function () {
+                $(window).bind('scroll', function () {
+                    if ($(window).scrollTop() > 100) {
+                        $("#viewId").slideDown("slow");
+                    }
+                    else {
+                        $("#viewId").slideUp("slow");
+                    }
+                });
+            });
+    </script>
+</body>
+
+</html>
