@@ -127,6 +127,10 @@ $('#copyimageId').click(function(){
     onCopy();
 });
 
+$('#savescreen').click(function(){
+    window.print();
+});
+
 $(function () {
     $('#copytext').on('hide.bs.popover', function (e) {
         onCopy();
@@ -195,11 +199,3 @@ function onVisibilityChange() {
         }
     }
 }
-
-
-
-
-
-
-
-
