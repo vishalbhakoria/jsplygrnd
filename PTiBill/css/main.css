@@ -1,3 +1,7 @@
+body {
+    overflow-x:hidden!important;
+}
+
 .float-right{
     float:right;
 }
