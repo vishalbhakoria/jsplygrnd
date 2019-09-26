@@ -124,11 +124,7 @@ $(document).ready(function () {
 
 $(function () {
     $('#copytext').on('hide.bs.popover', function (e) {
-        //onCopy();
-    });
-    $('#myid').click(function(){
         onCopy();
-        $('#copytext').click();
     });
 });
 $('.popover-dismiss').popover({
