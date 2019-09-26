@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="no-js" lang="">
 <head>
     <meta charset="utf-8">
@@ -21,43 +21,40 @@
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 <body>
-    <!--<div class="contentmedia mobile-screen-size" id="mediaId" style="font-family: 'SourceSansPro-Bold', 'Source Sans Pro Bold', 'Source Sans Pro';">
-        <img src="images/icon-error-desktop.png" />
-        <h1>Unsupported Screen Resolution</h1>
-        Please switch to a mobile device to view.
-    </div>-->
-        <div class="container">
-            <div class="row col-xs-12 col-sm-12 white-bg">
-                <h1 class="sub-header bold-font">View Your Property Tax Bill</h1>
-                <p>This service enables you to view your interactive property tax bill, to find out on your property tax assessment and arrange your payment.</p>
-                <p>To view, please enter the <u><b>last 4 digits</b></u> of the property owner's NRIC number.</p>
-            </div>
-            <!--onkeypress="return event.charCode >= 48 && event.charCode <= 57" -->
-            <div class="row col-xs-12 col-sm-12 white-bg">
-                <div class="col-xs-12 col-sm-12 white-bg flex-center">
-                    <!--<input type="tel" id="id_input" placeholder="1234" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 95" class="form-control" pattern="[0-9]" maxlength="4"  title="1-2-3-4" input-mask="_-_-_-_">-->
-                    <input type="tel" id="id_input" placeholder="1234" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 95" class="form-control" pattern="[0-9]" maxlength="4">
-                </div>
-                <div id="divErrorId" style="text-align:center">
-                    <label id="lblErrorMsg" class="error-msg"></label>
-                </div>
-            </div>
-            <div class="row col-xs-12 col-sm-12 white-bg">
-                <div class="col-xs-12 col-sm-12 white-bg flex-center">
-                    <button type="button" id="nric_submit_btn" class="blue-btn" onclick="javascript: onSubmit();" value="SUBMIT">SUBMIT</button>
-                </div>
-            </div>
-            <div class="row col-xs-12 col-sm-12 white-bg">
-                <div class="col-xs-12 col-sm-12 white-bg flex-center">
-                    <div class="g-recaptcha"
-                         data-sitekey="6LdTprMUAAAAANyFqqVN0zjvY9uHHBX844QPM71U"
-                         data-callback="onSubmitCaptcha"
-                         data-size="invisible"
-                         data-badge="inline"></div>
-                </div>
-            </div>
-            
+    <div class="container">
+        <div class="row col-xs-12 col-sm-12 white-bg">
+            <h1 class="sub-header bold-font">View Your Property Tax Bill</h1>
+            <p>This service enables you to view your interactive property tax bill. You can find out on your property tax assessment and arrange for payment.</p>
+            <p>To view, please enter the <u><b>last 4 numeric digits</b></u> of the property owner's NRIC number.</p>
         </div>
+        <!--onkeypress="return event.charCode >= 48 && event.charCode <= 57" -->
+        <div class="row col-xs-12 col-sm-12 white-bg">
+            <div class="col-xs-12 col-sm-12 white-bg flex-center">
+                <!--<input type="tel" id="id_input" placeholder="1234" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 95" class="form-control" pattern="[0-9]" maxlength="4"  title="1-2-3-4" input-mask="_-_-_-_">-->
+                <input type="tel" id="id_input" placeholder="1234" onkeypress="return event.charCode >= 48 && event.charCode <= 57 || event.charCode == 95" class="form-control" pattern="[0-9]" maxlength="4">
+                <!--&nbsp;&nbsp;
+            <button type="button" id="nric_submit_btn" class="blue-btn" onclick="javascript: onSubmit();" value="SUBMIT">SUBMIT</button>-->
+            </div>
+            <div id="divErrorId" style="text-align:center">
+                <label id="lblErrorMsg" class="error-msg"></label>
+            </div>
+        </div>
+        <div class="row col-xs-12 col-sm-12 white-bg">
+        <div class="col-xs-12 col-sm-12 white-bg flex-center">
+            <button type="button" id="nric_submit_btn" class="blue-btn" onclick="javascript: onSubmit();" value="SUBMIT">SUBMIT</button>
+        </div>
+    </div>
+        <div class="row col-xs-12 col-sm-12 white-bg">
+            <div class="col-xs-12 col-sm-12 white-bg flex-center">
+                <div class="g-recaptcha"
+                     data-sitekey="6LdTprMUAAAAANyFqqVN0zjvY9uHHBX844QPM71U"
+                     data-callback="onSubmitCaptcha"
+                     data-size="invisible"
+                     data-badge="inline"></div>
+            </div>
+        </div>
+
+    </div>
         <div class="row footer-section nopadding">
             <div class="solid-blue-background"></div>
         </div>
@@ -67,7 +64,6 @@
 
 </body>
 </html>
-
 
 
 <!--<script>
