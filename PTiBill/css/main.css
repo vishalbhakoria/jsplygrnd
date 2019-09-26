@@ -1,3 +1,8 @@
+.line-Padding {
+    padding-bottom: 0px !important;
+}
+
+
 body {
     overflow-x:hidden!important;
     width: 100%!important;
@@ -185,6 +190,7 @@ h2 {
 
 .education-message img{
     top: 5px;
+    width:210px;
 }
 
 .blue-section-header > .header-text{
@@ -725,6 +731,8 @@ h1 {
 .axs-img {
     height: 18px;
     width: 95px;
+    position: relative;
+    top: 4px;
 }
 
 .copy-div {
@@ -907,6 +915,7 @@ h1 {
 .logo-img {
     width: 43px;
     padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 
