@@ -1,7 +1,7 @@
 body {
     overflow-x:hidden!important;
+    width: 100%!important;
 }
-
 .float-right{
     float:right;
 }
@@ -743,7 +743,7 @@ h1 {
     outline-style: initial;
     padding-top: 10px;
     padding-bottom: 10px;
-    width: 82px;
+    width: 78px;
     outline: none;
     /*padding-left: 18% !important;
     padding-right: 43% !important;*/
