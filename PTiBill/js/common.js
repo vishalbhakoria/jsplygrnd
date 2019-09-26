@@ -48,12 +48,12 @@ function onSubmit() {
 }
 
 function onPayTax() {
-    window.location.replace('payment.html')
+    window.location.replace('Payment.html')
 }
 
 
 function onAXSPage() {
-    window.location.replace('pin.html')
+    window.location.replace('Pin.html')
 }
 
 function onBack() {
