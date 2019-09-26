@@ -122,6 +122,11 @@ $(document).ready(function () {
     $('[data-toggle="popover"]').popover();
 });
 
+$('#copyimageId').click(function(){
+    $('#copytext').popover('show');
+    onCopy();
+});
+
 $(function () {
     $('#copytext').on('hide.bs.popover', function (e) {
         onCopy();
